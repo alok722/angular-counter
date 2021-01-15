@@ -6,5 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'counter';
+  title: string = 'Counter';
+  count: number = 0;
+  now;
+
+  constructor() {
+    setInterval(() => {
+      this.now = Date.now();
+    }, 1);
+}
+
+  handleIncrease = () => {
+    this.count++;
+  }
+
+  handleDecrease = () => {
+    if (this.count !== 0)
+      this.count--;
+  }
+
+  handleReset = () => {
+    this.count = 0;
+  }
 }

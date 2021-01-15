@@ -1,14 +1,15 @@
+<div id="MyClockDisplay" class="clock">{{ now | date:'HH:mm:ss'}}</div>
 <div class="container">
   <header>
     <h1>Counter</h1>
   </header>
   <main>
     <h2>
-      Current count is: 0
+      Current count is: {{ count }}
     </h2>
   </main>
 
-  <button>Reset Count</button>
-  <button>Increase Count</button>
-  <button>Decrease Count</button>
+  <button (click)="handleReset()">Reset Count</button>
+  <button (click)="handleIncrease()">Increase Count</button>
+  <button (click)="handleDecrease()">Decrease Count</button>
 </div>
